@@ -1,0 +1,106 @@
+Lap,Metric,Task,Value,Unit
+All,Indexing time,,1.02865,min
+All,Indexing throttle time,,0,min
+All,Merge time,,0.18373333333333333,min
+All,Refresh time,,0.16333333333333336,min
+All,Flush time,,0,min
+All,Merge throttle time,,0,min
+All,Total Young Gen GC,,3.712,s
+All,Total Old Gen GC,,0,s
+All,Store size,,1.913344144821167,GB
+All,Translog size,,2.002343535423279e-06,GB
+All,Heap used for segments,,7.415057182312012,MB
+All,Heap used for doc values,,2.12799072265625,MB
+All,Heap used for terms,,4.649609565734863,MB
+All,Heap used for norms,,0.39862060546875,MB
+All,Heap used for points,,0.10829734802246094,MB
+All,Heap used for stored fields,,0.1305389404296875,MB
+All,Segment count,,144,
+All,Min Throughput,product_search_milk,1.10,ops/s
+All,Median Throughput,product_search_milk,1.22,ops/s
+All,Max Throughput,product_search_milk,1.31,ops/s
+All,50th percentile latency,product_search_milk,97283.359375,ms
+All,90th percentile latency,product_search_milk,116026.9671875,ms
+All,100th percentile latency,product_search_milk,120953.4765625,ms
+All,50th percentile service time,product_search_milk,2656.1375732421875,ms
+All,90th percentile service time,product_search_milk,5208.41513671875,ms
+All,100th percentile service time,product_search_milk,25971.154296875,ms
+All,error rate,product_search_milk,0.00,%
+All,Min Throughput,product_search_milk_family,1.69,ops/s
+All,Median Throughput,product_search_milk_family,1.80,ops/s
+All,Max Throughput,product_search_milk_family,1.89,ops/s
+All,50th percentile latency,product_search_milk_family,93797.609375,ms
+All,90th percentile latency,product_search_milk_family,111820.85234375,ms
+All,99th percentile latency,product_search_milk_family,120324.28624999999,ms
+All,100th percentile latency,product_search_milk_family,130277.40625,ms
+All,50th percentile service time,product_search_milk_family,1024.4557189941406,ms
+All,90th percentile service time,product_search_milk_family,6571.404394531253,ms
+All,99th percentile service time,product_search_milk_family,22929.106464843742,ms
+All,100th percentile service time,product_search_milk_family,43756.1484375,ms
+All,error rate,product_search_milk_family,0.00,%
+All,Min Throughput,product_search_coke,0.81,ops/s
+All,Median Throughput,product_search_coke,0.89,ops/s
+All,Max Throughput,product_search_coke,0.92,ops/s
+All,50th percentile latency,product_search_coke,91814.81640625,ms
+All,90th percentile latency,product_search_coke,115391.98359375,ms
+All,100th percentile latency,product_search_coke,121254.65625,ms
+All,50th percentile service time,product_search_coke,3728.779296875,ms
+All,90th percentile service time,product_search_coke,5957.16474609375,ms
+All,100th percentile service time,product_search_coke,12194.2041015625,ms
+All,error rate,product_search_coke,0.00,%
+All,Min Throughput,product_search_coke_family,3.44,ops/s
+All,Median Throughput,product_search_coke_family,3.54,ops/s
+All,Max Throughput,product_search_coke_family,3.79,ops/s
+All,50th percentile latency,product_search_coke_family,93147.7109375,ms
+All,90th percentile latency,product_search_coke_family,111608.5984375,ms
+All,99th percentile latency,product_search_coke_family,115460.4625,ms
+All,100th percentile latency,product_search_coke_family,120682.1875,ms
+All,50th percentile service time,product_search_coke_family,729.4878946940104,ms
+All,90th percentile service time,product_search_coke_family,2514.913623046875,ms
+All,99th percentile service time,product_search_coke_family,6053.002470703124,ms
+All,100th percentile service time,product_search_coke_family,9414.6455078125,ms
+All,error rate,product_search_coke_family,0.00,%
+All,Min Throughput,product_search_chee*_partial,1.71,ops/s
+All,Median Throughput,product_search_chee*_partial,1.82,ops/s
+All,Max Throughput,product_search_chee*_partial,1.88,ops/s
+All,50th percentile latency,product_search_chee*_partial,86819.46484375,ms
+All,90th percentile latency,product_search_chee*_partial,114263.33203125,ms
+All,100th percentile latency,product_search_chee*_partial,120639.15625,ms
+All,50th percentile service time,product_search_chee*_partial,2514.387939453125,ms
+All,90th percentile service time,product_search_chee*_partial,5022.585058593751,ms
+All,100th percentile service time,product_search_chee*_partial,32017.677734375,ms
+All,error rate,product_search_chee*_partial,0.00,%
+All,Min Throughput,product_search_chee*_family_partial,2.83,ops/s
+All,Median Throughput,product_search_chee*_family_partial,3.19,ops/s
+All,Max Throughput,product_search_chee*_family_partial,3.53,ops/s
+All,50th percentile latency,product_search_chee*_family_partial,90061.80859375,ms
+All,90th percentile latency,product_search_chee*_family_partial,111030.28359375,ms
+All,99th percentile latency,product_search_chee*_family_partial,117393.5884375,ms
+All,100th percentile latency,product_search_chee*_family_partial,133590.03125,ms
+All,50th percentile service time,product_search_chee*_family_partial,304.2136993408203,ms
+All,90th percentile service time,product_search_chee*_family_partial,1951.8101562500015,ms
+All,99th percentile service time,product_search_chee*_family_partial,10093.766904296874,ms
+All,100th percentile service time,product_search_chee*_family_partial,31342.470703125,ms
+All,error rate,product_search_chee*_family_partial,0.00,%
+All,Min Throughput,product_search_banana,0.88,ops/s
+All,Median Throughput,product_search_banana,0.94,ops/s
+All,Max Throughput,product_search_banana,1.07,ops/s
+All,50th percentile latency,product_search_banana,97495.75,ms
+All,90th percentile latency,product_search_banana,116748.6015625,ms
+All,100th percentile latency,product_search_banana,120713.2421875,ms
+All,50th percentile service time,product_search_banana,2887.42626953125,ms
+All,90th percentile service time,product_search_banana,6009.305078125002,ms
+All,100th percentile service time,product_search_banana,27504.806640625,ms
+All,error rate,product_search_banana,0.00,%
+All,Min Throughput,product_search_banana_family,4.72,ops/s
+All,Median Throughput,product_search_banana_family,4.94,ops/s
+All,Max Throughput,product_search_banana_family,5.34,ops/s
+All,50th percentile latency,product_search_banana_family,90145.25,ms
+All,90th percentile latency,product_search_banana_family,108535.2890625,ms
+All,99th percentile latency,product_search_banana_family,114520.37796875,ms
+All,100th percentile latency,product_search_banana_family,119299.640625,ms
+All,50th percentile service time,product_search_banana_family,297.6768086751302,ms
+All,90th percentile service time,product_search_banana_family,1514.8704589843749,ms
+All,99th percentile service time,product_search_banana_family,6036.278740234383,ms
+All,100th percentile service time,product_search_banana_family,9387.5361328125,ms
+All,error rate,product_search_banana_family,0.00,%

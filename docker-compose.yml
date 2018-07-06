@@ -5,11 +5,12 @@ services:
     image: ducas/elastic-rally:0.11.0
     environment:
       USER_TAG: loadtest:current ES Dev version 5.6.8 ProductTrack
-    command: esrally race --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/product 
+    command: esrally race --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/product --report-format=csv --report-file=/usr/rally/results/product_result.csv
     #command: sh
     volumes:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
+      - ./results:/usr/results
 
   review:
     image: ducas/elastic-rally:0.11.0
