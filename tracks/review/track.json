@@ -86,7 +86,7 @@
             }
           },
           "clients": 5,
-          "time-period": 600,
+          "time-period": 300,
           "target-throughput": 100
         }
       ]

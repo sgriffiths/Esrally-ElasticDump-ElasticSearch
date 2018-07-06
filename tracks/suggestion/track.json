@@ -112,8 +112,8 @@
                     "aggs": {}
                   }
                 },
-                "clients": 10,
-                "time-period": 1200,
+                "clients": 5,
+                "time-period": 300,
                 "target-throughput": 100
               }
             ]
