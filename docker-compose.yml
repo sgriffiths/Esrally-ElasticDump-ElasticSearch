@@ -45,6 +45,7 @@ services:
     environment:
       USER_TAG: loadtest:current ES Dev version 5.6.8 CategoryTrack
     command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/category
+    volumes:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
       - ./data:/usr/rally/data
