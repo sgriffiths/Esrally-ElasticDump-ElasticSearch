@@ -1,0 +1,50 @@
+|   Lap |                          Metric |                                Task |       Value |   Unit |
+|------:|--------------------------------:|-----------------------------------:|------------:|-------:|
+|   All |                   Indexing time |                                    |      0.5935 |    min |
+|   All |          Indexing throttle time |                                    |           0 |    min |
+|   All |                      Merge time |                                    |    0.105183 |    min |
+|   All |                    Refresh time |                                    |      0.1142 |    min |
+|   All |                      Flush time |                                    |           0 |    min |
+|   All |             Merge throttle time |                                    |           0 |    min |
+|   All |              Total Young Gen GC |                                    |     492.246 |      s |
+|   All |                Total Old Gen GC |                                    |           0 |      s |
+|   All |                      Store size |                                    |     1.90592 |     GB |
+|   All |                   Translog size |                                    | 2.00234e-06 |     GB |
+|   All |          Heap used for segments |                                    |     7.63101 |     MB |
+|   All |        Heap used for doc values |                                    |     2.26612 |     MB |
+|   All |             Heap used for terms |                                    |     4.71847 |     MB |
+|   All |             Heap used for norms |                                    |    0.404541 |     MB |
+|   All |            Heap used for points |                                    |    0.107449 |     MB |
+|   All |     Heap used for stored fields |                                    |     0.13443 |     MB |
+|   All |                   Segment count |                                    |         154 |        |
+|   All |                      error rate |                               bulk |           0 |      % |
+|   All |                  Min Throughput | query-search-partial-suggestion-c* |       42.48 |  ops/s |
+|   All |               Median Throughput | query-search-partial-suggestion-c* |       48.64 |  ops/s |
+|   All |                  Max Throughput | query-search-partial-suggestion-c* |       55.44 |  ops/s |
+|   All |         50th percentile latency | query-search-partial-suggestion-c* |     14851.5 |     ms |
+|   All |         90th percentile latency | query-search-partial-suggestion-c* |     29765.6 |     ms |
+|   All |         99th percentile latency | query-search-partial-suggestion-c* |       32341 |     ms |
+|   All |       99.9th percentile latency | query-search-partial-suggestion-c* |     33570.8 |     ms |
+|   All |        100th percentile latency | query-search-partial-suggestion-c* |     33630.6 |     ms |
+|   All |    50th percentile service time | query-search-partial-suggestion-c* |     87.0565 |     ms |
+|   All |    90th percentile service time | query-search-partial-suggestion-c* |     158.874 |     ms |
+|   All |    99th percentile service time | query-search-partial-suggestion-c* |     414.148 |     ms |
+|   All |  99.9th percentile service time | query-search-partial-suggestion-c* |     1369.64 |     ms |
+|   All |   100th percentile service time | query-search-partial-suggestion-c* |     1405.64 |     ms |
+|   All |                      error rate | query-search-partial-suggestion-c* |           0 |      % |
+|   All |                  Min Throughput | query-search-partial-suggestion-p* |       41.33 |  ops/s |
+|   All |               Median Throughput | query-search-partial-suggestion-p* |       46.92 |  ops/s |
+|   All |                  Max Throughput | query-search-partial-suggestion-p* |        53.7 |  ops/s |
+|   All |         50th percentile latency | query-search-partial-suggestion-p* |      341178 |     ms |
+|   All |         90th percentile latency | query-search-partial-suggestion-p* |      568867 |     ms |
+|   All |         99th percentile latency | query-search-partial-suggestion-p* |      626695 |     ms |
+|   All |       99.9th percentile latency | query-search-partial-suggestion-p* |      637583 |     ms |
+|   All |      99.99th percentile latency | query-search-partial-suggestion-p* |      640033 |     ms |
+|   All |        100th percentile latency | query-search-partial-suggestion-p* |      640320 |     ms |
+|   All |    50th percentile service time | query-search-partial-suggestion-p* |     91.6971 |     ms |
+|   All |    90th percentile service time | query-search-partial-suggestion-p* |     140.464 |     ms |
+|   All |    99th percentile service time | query-search-partial-suggestion-p* |     376.238 |     ms |
+|   All |  99.9th percentile service time | query-search-partial-suggestion-p* |     825.458 |     ms |
+|   All | 99.99th percentile service time | query-search-partial-suggestion-p* |      9349.6 |     ms |
+|   All |   100th percentile service time | query-search-partial-suggestion-p* |     17666.5 |     ms |
+|   All |                      error rate | query-search-partial-suggestion-p* |           0 |      % |

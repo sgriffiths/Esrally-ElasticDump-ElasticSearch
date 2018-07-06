@@ -1,0 +1,442 @@
+{
+  "productaggregate_b": {
+    "mappings": {
+      "doc": {
+        "properties": {
+          "agerestricted": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "aisle": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "aisledisplayorder_alpha": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "aisledisplayorder_beta": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "aisleid": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "allergen_contains": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "allergens_may_be_present": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "availabledate": {
+            "type": "date",
+            "format": "dateOptionalTime"
+          },
+          "barcode": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "brand": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "categories": {
+            "type": "nested",
+            "properties": {
+              "displayorder": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "isrestricted": {
+                "type": "boolean"
+              },
+              "nodeid": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "keyword"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "nodelevel": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "parentnodeid": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "keyword"
+                  }
+                },
+                "analyzer": "default_en"
+              }
+            }
+          },
+          "categorydisplayorder_alpha": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "categorydisplayorder_beta": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "categorypath_alpha": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "categorypath_beta": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "dept": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "deptid": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "description": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "displayname": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "dynamiccategorypath_alpha": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "dynamiccategorypath_beta": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "genericproductname": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "ingredients": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "price": {
+            "type": "nested",
+            "properties": {
+              "cupsaleprice": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "double"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "fulfilmentstoreid": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "saleprice": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "double"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "stockcode": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              }
+            }
+          },
+          "priceexception": {
+            "type": "nested",
+            "properties": {
+              "cupsaleprice": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "double"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "date": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "fulfilmentstoreid": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "saleprice": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "double"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "stockcode": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              }
+            }
+          },
+          "productgroupdisplayorder": {
+            "type": "nested",
+            "properties": {
+              "displayorder": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              },
+              "productgroupid": {
+                "type": "text",
+                "fields": {
+                  "raw": {
+                    "type": "long"
+                  }
+                },
+                "analyzer": "default_en"
+              }
+            }
+          },
+          "productimagecount": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "serving_size_total_nip": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "servings_per_pack_total_nip": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "shelf": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "shelfgroupkey": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "shelfid": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "stockcode": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "variety": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          },
+          "volumesize": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_en"
+          }
+        }
+      }
+    }
+  }
+}

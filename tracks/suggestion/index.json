@@ -1,0 +1,37 @@
+{
+  "suggestion_b": {
+    "mappings": {
+      "doc": {
+        "properties": {
+          "term": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "keyword"
+              }
+            },
+            "analyzer": "default_suggestion"
+          },
+          "term2": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "long"
+              }
+            },
+            "analyzer": "default_suggestion"
+          },
+          "weight": {
+            "type": "text",
+            "fields": {
+              "raw": {
+                "type": "double"
+              }
+            },
+            "analyzer": "default_en"
+          }
+        }
+      }
+    }
+  }
+}

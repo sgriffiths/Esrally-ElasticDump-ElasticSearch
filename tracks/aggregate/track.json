@@ -1,0 +1,93 @@
+{
+  "version": 2,
+  "description": "Rally productaggregate performance test",
+  "indices": [
+    {
+      "name": "productaggregate_b",
+      "body": "index.json",
+      "types": [
+        "docs"
+      ]
+    }
+  ],
+  "corpora": [
+    {
+      "name": "productaggregate-test-track",
+      "documents": [
+        {
+          "source-file": "../data/productaggregate_b.data.json",
+          "document-count": 2797,
+          "uncompressed-bytes": 20163298
+        }
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "name": "index-and-query",
+      "default": true,
+      "schedule": [
+        {
+          "operation": {
+            "operation-type": "delete-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "create-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "cluster-health",
+            "request-params": {
+              "wait_for_status": "green"
+            }
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "bulk",
+            "bulk-size": 1000
+          },
+          "warmup-time-period": 60,
+          "clients": 8
+        },
+        {
+          "operation": {
+            "operation-type": "force-merge"
+          }
+        },
+        {
+          "operation": {
+            "name": "query-search-sale-price-range",
+            "operation-type": "search",
+            "body": {
+              "query": {
+                "bool": {
+                  "must": [],
+                  "must_not": [],
+                  "should": [
+                    {
+                      "range": {
+                        "price.saleprice": {
+                          "gte": "1.0",
+                          "lt": "1.50"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "from": 0,
+              "size": 25
+            }
+          },
+          "clients": 5,
+          "time-period": 60,
+          "target-throughput": 100
+        }
+      ]
+    }
+  ]
+}

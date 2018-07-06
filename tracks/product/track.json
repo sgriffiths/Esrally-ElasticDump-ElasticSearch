@@ -1,0 +1,19 @@
+{% import "rally.helpers" as rally %}
+{
+  "description": "Rally product performance test",
+  "indices": [
+    {
+      "name": "product_b",
+      "body": "index.json",
+      "types": [
+        "docs"
+      ]
+    }
+  ],
+  "operations": [
+    {{ rally.collect(parts="operations/*.json") }}
+  ],
+  "challenges": [
+    {{ rally.collect(parts="challenges/*.json") }}
+  ]
+}

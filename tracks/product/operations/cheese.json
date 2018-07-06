@@ -1,0 +1,549 @@
+{
+  "name": "product_search_chee*_partial",
+  "operation-type": "search",
+  "body": {
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "bool": {
+              "should": [
+                {
+                  "bool": {
+                    "boost": 1.0,
+                    "must": [
+                      {
+                        "multi_match": {
+                          "boost": 1.0,
+                          "type": "cross_fields",
+                          "query": "chee",
+                          "operator": "and",
+                          "fields": [
+                            "barcode^1",
+                            "searchtags^1",
+                            "agerestricted^1",
+                            "brand^1",
+                            "volumesize^3",
+                            "sapdepartmentno^1",
+                            "sapsegmentname^4",
+                            "sapsegmentno^1",
+                            "sapsubcategoryno^1",
+                            "aisleid^1",
+                            "deptid^1",
+                            "shelfid^1",
+                            "sapcategoryname^1",
+                            "sapsubcategoryname^1",
+                            "shelf^1",
+                            "dept^1",
+                            "shelfgroupid^1",
+                            "aisledisplayorder_beta^1",
+                            "categorydisplayorder_beta^1",
+                            "stockcode^1",
+                            "lifestyle_claim^1",
+                            "wool_dietaryclaim^1",
+                            "pies_brand^1"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "bool": {
+                    "boost": 1.0,
+                    "must": [
+                      {
+                        "bool": {
+                          "should": [
+                            {
+                              "wildcard": {
+                                "numberoftimespurchased": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "agerestricted": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "aisle": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapcategoryname": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsubcategoryname": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "dept": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "deptid": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "shelfid": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsegmentname": {
+                                  "boost": 4.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapdepartmentno": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsegmentno": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsubcategoryno": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "lifestyle_claim": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "wool_dietaryclaim": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "pies_brand": {
+                                  "boost": 1.0,
+                                  "value": "chee*"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "bool": {
+                    "boost": 1.0,
+                    "must": [
+                      {
+                        "multi_match": {
+                          "boost": 1.0,
+                          "type": "cross_fields",
+                          "query": "chee",
+                          "analyzer": "standard_autocorrect",
+                          "operator": "and",
+                          "fields": [
+                            "barcode^1",
+                            "agerestricted^1",
+                            "perishablecode^1",
+                            "volumesize^1",
+                            "sapdepartmentno^1",
+                            "sapsegmentname^1",
+                            "sapsegmentno^1",
+                            "sapsubcategoryno^1",
+                            "aisleid^1",
+                            "deptid^1",
+                            "shelfid^1",
+                            "sapcategoryname^1",
+                            "sapsubcategoryname^1",
+                            "shelf^1",
+                            "dept^1",
+                            "shelfgroupid^1",
+                            "lifestyle_claim^1"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "bool": {
+                    "boost": 1.0,
+                    "must": [
+                      {
+                        "bool": {
+                          "should": [
+                            {
+                              "wildcard": {
+                                "barcode": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "numberoftimespurchased": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "aisle": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapdepartmentno": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsubcategoryno": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "dept": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "deptid": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "shelf": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "perishablecode": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "boxed_contents": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "volumesize": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsegmentname": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsegmentno": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "sapsegmentno": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "aisleid": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "shelfid": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "shelfgroupid": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "lifestyle_claim": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            },
+                            {
+                              "wildcard": {
+                                "wool_dietaryclaim": {
+                                  "boost": 1.0,
+                                  "value": "*chee"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "multi_match": {
+                    "boost": 1.0,
+                    "type": "phrase",
+                    "query": "chee",
+                    "operator": "or",
+                    "fields": [
+                      "shelf^1",
+                      "aisle^1",
+                      "barcode^1",
+                      "stockcode^1",
+                      "sapcategoryname^1",
+                      "sapdepartmentname^1",
+                      "sapsegmentname^1",
+                      "sapsubcategoryname^1",
+                      "dept^1",
+                      "aisleid^1",
+                      "brand^1",
+                      "deptid^1",
+                      "healthstarrating^1",
+                      "lifestyle_claim^1",
+                      "perishablecode^1",
+                      "sapcategoryno^1",
+                      "sapdepartmentno^1",
+                      "sapsegmentno^1",
+                      "sapsubcategoryno^1",
+                      "searchtags^1",
+                      "shelfid^1",
+                      "wool_dietaryclaim^1",
+                      "volumesize^1",
+                      "basedescription^1",
+                      "displayname^1"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "filter": [
+          {
+            "exists": {
+              "field": "stockcode"
+            }
+          },
+          {
+            "bool": {
+              "must": [
+                {
+                  "bool": {
+                    "should": [
+                      {
+                        "term": {
+                          "isbundle": {
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "bool": {
+                          "must_not": [
+                            {
+                              "exists": {
+                                "field": "isbundle"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "term": {
+                          "webenable": {
+                            "value": "true"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "nested": {
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "term": {
+                              "price.fulfilmentstoreid": {
+                                "value": "1649"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "path": "price"
+                  }
+                }
+              ],
+              "must_not": [
+                {
+                  "range": {
+                    "agerestricted.raw": {
+                      "gt": 2147483647.0,
+                      "lt": 2147483647.0
+                    }
+                  }
+                },
+                {
+                  "nested": {
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "terms": {
+                              "productgroupdisplayorder.productgroupid": []
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "path": "productgroupdisplayorder"
+                  }
+                },
+                {
+                  "exists": {
+                    "field": "shelfgroupid"
+                  }
+                },
+                {
+                  "nested": {
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "terms": {
+                              "categories.nodeid.raw": [
+                                "1_5D1DC54",
+                                "1_5F7F818",
+                                "1_6041D22",
+                                "1_642B716",
+                                "1_86F606C",
+                                "1_89BB9C0",
+                                "1_B02B02B",
+                                "1_B63CF9E"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "path": "categories"
+                  }
+                },
+                {
+                  "terms": {
+                    "deptid": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

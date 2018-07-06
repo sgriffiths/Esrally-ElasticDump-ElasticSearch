@@ -1,0 +1,81 @@
+{
+  "name": "search for terms and phrases",
+  "description": "search for multiple queries",
+  "default": true,
+  "schedule": [
+    {
+      "name": "check-cluster-health",
+      "operation": {
+        "operation-type": "cluster-health",
+        "index": "product_b",
+        "request-params": {
+          "wait_for_status": "green",
+          "wait_for_no_relocating_shards": "true",
+          "clients": 1
+        }
+      }
+    },
+    {
+      "parallel": {
+        "tasks": [
+          {
+            "operation": "product_search_milk",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          },
+          {
+            "operation": "product_search_milk_family",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          },
+          {
+            "operation": "product_search_coke",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          },
+          {
+            "operation": "product_search_coke_family",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          },
+          {
+            "operation": "product_search_chee*_partial",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          },
+          {
+            "operation": "product_search_chee*_family_partial",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          },          
+          {
+            "operation": "product_search_banana",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          },
+          {
+            "operation": "product_search_banana_family",
+            "clients": 1,
+            "warmup-time-period": 60,
+            "time-period": 60,
+            "target-throughput": 10
+          }
+        ]
+      }
+    }
+  ]
+}

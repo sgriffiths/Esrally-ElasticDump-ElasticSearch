@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "description": "Rally category performance test",
+  "indices": [
+    {
+      "name": "category_b",
+      "body": "index.json",
+      "types": [
+        "docs"
+      ]
+    }
+  ],
+  "corpora": [
+    {
+      "name": "category-test-track",
+      "documents": [
+        {
+          "source-file": "../data/category_b.data.json",
+          "document-count": 715,
+          "uncompressed-bytes": 96687
+        }
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "name": "index-and-query",
+      "default": true,
+      "schedule": [
+        {
+          "operation": {
+            "operation-type": "delete-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "create-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "cluster-health",
+            "request-params": {
+              "wait_for_status": "green"
+            }
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "bulk",
+            "bulk-size": 1000
+          },
+          "warmup-time-period": 60,
+          "clients": 16
+        },
+        {
+          "operation": {
+            "operation-type": "force-merge"
+          }
+        },
+        {
+          "operation": {
+            "name": "query-search-all_milk-categories",
+            "operation-type": "search",
+            "body": {
+              "query": {
+                "bool": {
+                  "must": [],
+                  "must_not": [],
+                  "should": [
+                    {
+                      "query_string": {
+                        "default_field": "_all",
+                        "query": "coffee"
+                      }
+                    },
+                    {
+                      "query_string": {
+                        "default_field": "_all",
+                        "query": "milk"
+                      }
+                    }
+                  ]
+                }
+              },
+              "from": 0,
+              "size": 50,
+              "sort": [],
+              "aggs": {}
+            }
+          },
+          "clients": 5,
+          "time-period": 60,
+          "target-throughput": 100
+        }
+      ]
+    }
+  ]
+}

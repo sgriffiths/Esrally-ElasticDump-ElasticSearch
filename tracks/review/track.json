@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "description": "Rally product review performance test",
+  "indices": [
+    {
+      "name": "productreview_b",
+      "body": "index.json",
+      "types": [
+        "docs"
+      ]
+    }
+  ],
+  "corpora": [
+    {
+      "name": "productreview-test-track",
+      "documents": [
+        {
+          "source-file": "../data/productreview_b.data.json",
+          "document-count": 96924,
+          "uncompressed-bytes": 27341937
+        }
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "name": "index-and-search-ProductReview",
+      "default": true,
+      "schedule": [
+        {
+          "operation": {
+            "operation-type": "delete-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "create-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "cluster-health",
+            "request-params": {
+              "wait_for_status": "green"
+            }
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "bulk",
+            "bulk-size": 1000
+          },
+          "warmup-time-period": 60,
+          "clients": 8
+        },
+        {
+          "operation": {
+            "operation-type": "force-merge"
+          }
+        },
+        {
+          "operation": {
+            "name": "query-search-product_review",
+            "operation-type": "search",
+            "body": {
+              "query": {
+                "bool": {
+                  "must": [],
+                  "must_not": [],
+                  "should": [
+                    {
+                      "term": {
+                        "stockcode": "250552"
+                      }
+                    },
+                    {
+                      "term": {
+                        "stockcode": "250550"
+                      }
+                    }
+                  ]
+                }
+              },
+              "from": 0,
+              "size": 50
+            }
+          },
+          "clients": 5,
+          "time-period": 600,
+          "target-throughput": 100
+        }
+      ]
+    }
+  ]
+}

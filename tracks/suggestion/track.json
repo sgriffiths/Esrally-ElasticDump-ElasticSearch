@@ -1,0 +1,125 @@
+{
+  "description": "Rally suggestion_a performance test",
+  "indices": [
+    {
+      "name": "suggestion_b",
+      "body": "index.json",
+      "types": [
+        "docs"
+      ]
+    }
+  ],
+  "corpora": [
+    {
+      "name": "suggestion-test-track",
+      "documents": [
+        {
+          "source-file": "../data/suggestion_a.data.json",
+          "document-count": 19,
+          "uncompressed-bytes": 2023
+        }
+      ]
+    }
+  ],
+  "challenges": [
+    {
+      "name": "index-and-query",
+      "default": true,
+      "schedule": [
+        {
+          "operation": {
+            "operation-type": "delete-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "create-index"
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "cluster-health",
+            "request-params": {
+              "wait_for_status": "green"
+            }
+          }
+        },
+        {
+          "operation": {
+            "operation-type": "bulk",
+            "bulk-size": 1000
+          },
+          "warmup-time-period": 60,
+          "clients": 4
+        },
+        {
+          "operation": {
+            "operation-type": "force-merge"
+          }
+        },
+        {
+          "parallel": {
+            "tasks": [
+              {
+                "operation": {
+                  "name": "query-search-partial-suggestion-c*",
+                  "operation-type": "search",
+                  "body": {
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "wildcard": {
+                              "term.raw": "c*"
+                            }
+                          }
+                        ],
+                        "must_not": [],
+                        "should": []
+                      }
+                    },
+                    "from": 0,
+                    "size": 10,
+                    "sort": [],
+                    "aggs": {}
+                  }
+                },
+                "clients": 5,
+                "time-period": 60,
+                "target-throughput": 100
+              },
+              {
+                "operation": {
+                  "name": "query-search-partial-suggestion-p*",
+                  "operation-type": "search",
+                  "body": {
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "wildcard": {
+                              "term.raw": "p*"
+                            }
+                          }
+                        ],
+                        "must_not": [],
+                        "should": []
+                      }
+                    },
+                    "from": 0,
+                    "size": 10,
+                    "sort": [],
+                    "aggs": {}
+                  }
+                },
+                "clients": 10,
+                "time-period": 1200,
+                "target-throughput": 100
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

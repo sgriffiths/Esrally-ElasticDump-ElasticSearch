@@ -1,0 +1,86 @@
+{
+  "name": "product_search_chee*_family_partial",
+  "operation-type": "search",
+  "body": {
+    "from": 0,
+    "size": 1000,
+    "explain": false,
+    "_source": {
+      "includes": [
+        "stockcode",
+        "special",
+        "shelfgroupkey",
+        "shelfgroupid",
+        "term"
+      ],
+      "excludes": [
+        "price",
+        "supplylimit",
+        "priceexception",
+        "suggest",
+        "productgroupdisplayorder"
+      ]
+    },
+    "query": {
+      "bool": {
+        "filter": [
+          {
+            "exists": {
+              "field": "stockcode"
+            }
+          },
+          {
+            "bool": {
+              "must": [
+                {
+                  "nested": {
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "term": {
+                              "price.fulfilmentstoreid": {
+                                "value": "1649"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "path": "price"
+                  }
+                },
+                {
+                  "terms": {
+                    "shelfgroupid": [
+                      "1351",
+                      "1352",
+                      "1311",
+                      "1319",
+                      "1320",
+                      "1313",
+                      "1314",
+                      "1315",
+                      "1359",
+                      "1358"
+                    ]
+                  }
+                }
+              ],
+              "must_not": [
+                {
+                  "range": {
+                    "agerestricted.raw": {
+                      "gt": 2147483647.0,
+                      "lt": 2147483647.0
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

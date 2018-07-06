@@ -1,0 +1,50 @@
+version: "2.2"
+
+services:
+  product:
+    image: ducas/elastic-rally:0.11.0
+    environment:
+      USER_TAG: loadtest:current ES Dev version 5.6.8 ProductTrack
+    command: esrally race --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/product 
+    #command: sh
+    volumes:
+      - ./rally.ini:/root/.rally/rally.ini
+      - ./tracks:/usr/rally
+
+  review:
+    image: ducas/elastic-rally:0.11.0
+    environment:
+      USER_TAG: loadtest:current ES Dev version 5.6.8 ProductReviewTrack
+    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/review
+    volumes:
+      - ./rally.ini:/root/.rally/rally.ini
+      - ./tracks:/usr/rally
+      - ./data:/usr/rally/data
+
+  # suggestion:
+  #   image: ducas/elastic-rally:0.11.0
+  #   environment:
+  #     USER_TAG: loadtest:current ES Dev version 5.6.8 SuggestionTrack
+  #   command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/suggestion --user-tag loadtest:current_SuggestionTrack
+  #   volumes:
+  #     - ./rally.ini:/root/.rally/rally.ini
+  #     - ./tracks:/usr/rally
+
+  aggregate:
+    image: ducas/elastic-rally:0.11.0
+    environment:
+      USER_TAG: loadtest:current ES Dev version 5.6.8 AggregateTrack
+    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/aggregate 
+    volumes:
+      - ./rally.ini:/root/.rally/rally.ini
+      - ./tracks:/usr/rally
+      - ./data:/usr/rally/data
+
+  category:
+    image: ducas/elastic-rally:0.11.0
+    environment:
+      USER_TAG: loadtest:current ES Dev version 5.6.8 CategoryTrack
+    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/category
+      - ./rally.ini:/root/.rally/rally.ini
+      - ./tracks:/usr/rally
+      - ./data:/usr/rally/data

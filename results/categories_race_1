@@ -1,0 +1,36 @@
+|   Lap |                          Metric |                                Task |       Value |   Unit |
+|------:|--------------------------------:|---------------------------------:|------------:|-------:|
+|   All |                   Indexing time |                                  |      0.5935 |    min |
+|   All |          Indexing throttle time |                                  |           0 |    min |
+|   All |                      Merge time |                                  |    0.105183 |    min |
+|   All |                    Refresh time |                                  |      0.1142 |    min |
+|   All |                      Flush time |                                  |           0 |    min |
+|   All |             Merge throttle time |                                  |           0 |    min |
+|   All |              Total Young Gen GC |                                  |     230.659 |      s |
+|   All |                Total Old Gen GC |                                  |           0 |      s |
+|   All |                      Store size |                                  |     1.90592 |     GB |
+|   All |                   Translog size |                                  | 2.00234e-06 |     GB |
+|   All |          Heap used for segments |                                  |     7.63101 |     MB |
+|   All |        Heap used for doc values |                                  |     2.26612 |     MB |
+|   All |             Heap used for terms |                                  |     4.71847 |     MB |
+|   All |             Heap used for norms |                                  |    0.404541 |     MB |
+|   All |            Heap used for points |                                  |    0.107449 |     MB |
+|   All |     Heap used for stored fields |                                  |     0.13443 |     MB |
+|   All |                   Segment count |                                  |         154 |        |
+|   All |                      error rate |                             bulk |           0 |      % |
+|   All |                  Min Throughput | query-search-all_milk-categories |       70.87 |  ops/s |
+|   All |               Median Throughput | query-search-all_milk-categories |       73.34 |  ops/s |
+|   All |                  Max Throughput | query-search-all_milk-categories |       91.89 |  ops/s |
+|   All |         50th percentile latency | query-search-all_milk-categories |     80890.4 |     ms |
+|   All |         90th percentile latency | query-search-all_milk-categories |      148298 |     ms |
+|   All |         99th percentile latency | query-search-all_milk-categories |      166590 |     ms |
+|   All |       99.9th percentile latency | query-search-all_milk-categories |      170518 |     ms |
+|   All |      99.99th percentile latency | query-search-all_milk-categories |      170838 |     ms |
+|   All |        100th percentile latency | query-search-all_milk-categories |      171856 |     ms |
+|   All |    50th percentile service time | query-search-all_milk-categories |     103.182 |     ms |
+|   All |    90th percentile service time | query-search-all_milk-categories |     191.971 |     ms |
+|   All |    99th percentile service time | query-search-all_milk-categories |     635.698 |     ms |
+|   All |  99.9th percentile service time | query-search-all_milk-categories |     1393.71 |     ms |
+|   All | 99.99th percentile service time | query-search-all_milk-categories |     15427.9 |     ms |
+|   All |   100th percentile service time | query-search-all_milk-categories |     18156.8 |     ms |
+|   All |                      error rate | query-search-all_milk-categories |           0 |      % |
