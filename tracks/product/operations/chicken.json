@@ -1,5 +1,5 @@
 {
-  "name": "product_search_banana",
+  "name": "product_search_chicken",
   "operation-type": "search",
   "body": {
     "query": {
