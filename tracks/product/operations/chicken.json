@@ -18,7 +18,7 @@
                             "multi_match": {
                               "boost": 1.0,
                               "type": "cross_fields",
-                              "query": "banana",
+                              "query": "breast",
                               "operator": "and",
                               "fields": [
                                 "barcode^1",
@@ -44,7 +44,42 @@
                                 "lifestyle_claim^1",
                                 "wool_dietaryclaim^1",
                                 "pies_brand^1"
-                              ]
+                              ],
+                              "zero_terms_query": "all"
+                            }
+                          },
+                          {
+                            "multi_match": {
+                              "boost": 1.0,
+                              "type": "cross_fields",
+                              "query": "chicken",
+                              "operator": "and",
+                              "fields": [
+                                "barcode^1",
+                                "searchtags^1",
+                                "agerestricted^1",
+                                "brand^1",
+                                "volumesize^3",
+                                "sapdepartmentno^1",
+                                "sapsegmentname^4",
+                                "sapsegmentno^1",
+                                "sapsubcategoryno^1",
+                                "aisleid^1",
+                                "deptid^1",
+                                "shelfid^1",
+                                "sapcategoryname^1",
+                                "sapsubcategoryname^1",
+                                "shelf^1",
+                                "dept^1",
+                                "shelfgroupid^1",
+                                "aisledisplayorder_beta^1",
+                                "categorydisplayorder_beta^1",
+                                "stockcode^1",
+                                "lifestyle_claim^1",
+                                "wool_dietaryclaim^1",
+                                "pies_brand^1"
+                              ],
+                              "zero_terms_query": "all"
                             }
                           }
                         ]
@@ -61,7 +96,7 @@
                                   "wildcard": {
                                     "numberoftimespurchased": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -69,7 +104,7 @@
                                   "wildcard": {
                                     "agerestricted": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -77,7 +112,7 @@
                                   "wildcard": {
                                     "aisle": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -85,7 +120,7 @@
                                   "wildcard": {
                                     "sapcategoryname": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -93,7 +128,7 @@
                                   "wildcard": {
                                     "sapsubcategoryname": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -101,7 +136,7 @@
                                   "wildcard": {
                                     "dept": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -109,7 +144,7 @@
                                   "wildcard": {
                                     "deptid": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -117,7 +152,7 @@
                                   "wildcard": {
                                     "shelfid": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -125,7 +160,7 @@
                                   "wildcard": {
                                     "sapsegmentname": {
                                       "boost": 4.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -133,7 +168,7 @@
                                   "wildcard": {
                                     "sapdepartmentno": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -141,7 +176,7 @@
                                   "wildcard": {
                                     "sapsegmentno": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -149,7 +184,7 @@
                                   "wildcard": {
                                     "sapsubcategoryno": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -157,7 +192,7 @@
                                   "wildcard": {
                                     "lifestyle_claim": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -165,7 +200,7 @@
                                   "wildcard": {
                                     "wool_dietaryclaim": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
                                     }
                                   }
                                 },
@@ -173,7 +208,133 @@
                                   "wildcard": {
                                     "pies_brand": {
                                       "boost": 1.0,
-                                      "value": "banana*"
+                                      "value": "breast*"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "bool": {
+                              "should": [
+                                {
+                                  "wildcard": {
+                                    "numberoftimespurchased": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "agerestricted": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "aisle": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapcategoryname": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsubcategoryname": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "dept": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "deptid": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelfid": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentname": {
+                                      "boost": 4.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapdepartmentno": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentno": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsubcategoryno": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "lifestyle_claim": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "wool_dietaryclaim": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "pies_brand": {
+                                      "boost": 1.0,
+                                      "value": "chicken*"
                                     }
                                   }
                                 }
@@ -191,7 +352,7 @@
                             "multi_match": {
                               "boost": 1.0,
                               "type": "cross_fields",
-                              "query": "banana",
+                              "query": "breast",
                               "analyzer": "standard_autocorrect",
                               "operator": "and",
                               "fields": [
@@ -212,7 +373,37 @@
                                 "dept^1",
                                 "shelfgroupid^1",
                                 "lifestyle_claim^1"
-                              ]
+                              ],
+                              "zero_terms_query": "all"
+                            }
+                          },
+                          {
+                            "multi_match": {
+                              "boost": 1.0,
+                              "type": "cross_fields",
+                              "query": "chicken",
+                              "analyzer": "standard_autocorrect",
+                              "operator": "and",
+                              "fields": [
+                                "barcode^1",
+                                "agerestricted^1",
+                                "perishablecode^1",
+                                "volumesize^1",
+                                "sapdepartmentno^1",
+                                "sapsegmentname^1",
+                                "sapsegmentno^1",
+                                "sapsubcategoryno^1",
+                                "aisleid^1",
+                                "deptid^1",
+                                "shelfid^1",
+                                "sapcategoryname^1",
+                                "sapsubcategoryname^1",
+                                "shelf^1",
+                                "dept^1",
+                                "shelfgroupid^1",
+                                "lifestyle_claim^1"
+                              ],
+                              "zero_terms_query": "all"
                             }
                           }
                         ]
@@ -229,7 +420,7 @@
                                   "wildcard": {
                                     "barcode": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -237,7 +428,7 @@
                                   "wildcard": {
                                     "numberoftimespurchased": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -245,7 +436,7 @@
                                   "wildcard": {
                                     "aisle": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -253,7 +444,7 @@
                                   "wildcard": {
                                     "sapdepartmentno": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -261,7 +452,7 @@
                                   "wildcard": {
                                     "sapsubcategoryno": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -269,7 +460,7 @@
                                   "wildcard": {
                                     "dept": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -277,7 +468,7 @@
                                   "wildcard": {
                                     "deptid": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -285,7 +476,7 @@
                                   "wildcard": {
                                     "shelf": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -293,7 +484,7 @@
                                   "wildcard": {
                                     "perishablecode": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -301,7 +492,7 @@
                                   "wildcard": {
                                     "boxed_contents": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -309,7 +500,7 @@
                                   "wildcard": {
                                     "volumesize": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -317,7 +508,7 @@
                                   "wildcard": {
                                     "sapsegmentname": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -325,7 +516,7 @@
                                   "wildcard": {
                                     "sapsegmentno": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -333,7 +524,7 @@
                                   "wildcard": {
                                     "sapsegmentno": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -341,7 +532,7 @@
                                   "wildcard": {
                                     "aisleid": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -349,7 +540,7 @@
                                   "wildcard": {
                                     "shelfid": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -357,7 +548,7 @@
                                   "wildcard": {
                                     "shelfgroupid": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -365,7 +556,7 @@
                                   "wildcard": {
                                     "lifestyle_claim": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
                                     }
                                   }
                                 },
@@ -373,7 +564,165 @@
                                   "wildcard": {
                                     "wool_dietaryclaim": {
                                       "boost": 1.0,
-                                      "value": "*banana"
+                                      "value": "*breast"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "bool": {
+                              "should": [
+                                {
+                                  "wildcard": {
+                                    "barcode": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "numberoftimespurchased": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "aisle": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapdepartmentno": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsubcategoryno": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "dept": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "deptid": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelf": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "perishablecode": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "boxed_contents": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "volumesize": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentname": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentno": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentno": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "aisleid": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelfid": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelfgroupid": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "lifestyle_claim": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "wool_dietaryclaim": {
+                                      "boost": 1.0,
+                                      "value": "*chicken"
                                     }
                                   }
                                 }
@@ -387,7 +736,7 @@
                       "multi_match": {
                         "boost": 1.0,
                         "type": "phrase",
-                        "query": "banana",
+                        "query": "breast chicken",
                         "operator": "or",
                         "fields": [
                           "shelf^1",
@@ -552,7 +901,7 @@
             "filter": {
               "term": {
                 "dept": {
-                  "value": "banana"
+                  "value": "breast"
                 }
               }
             },
@@ -562,7 +911,27 @@
             "filter": {
               "term": {
                 "dept": {
-                  "value": "bananas"
+                  "value": "chicken"
+                }
+              }
+            },
+            "weight": 26.0
+          },
+          {
+            "filter": {
+              "term": {
+                "dept": {
+                  "value": "breasts"
+                }
+              }
+            },
+            "weight": 13.0
+          },
+          {
+            "filter": {
+              "term": {
+                "dept": {
+                  "value": "chickens"
                 }
               }
             },
@@ -572,7 +941,7 @@
             "filter": {
               "term": {
                 "aisle": {
-                  "value": "banana"
+                  "value": "breast"
                 }
               }
             },
@@ -582,7 +951,27 @@
             "filter": {
               "term": {
                 "aisle": {
-                  "value": "bananas"
+                  "value": "chicken"
+                }
+              }
+            },
+            "weight": 24.0
+          },
+          {
+            "filter": {
+              "term": {
+                "aisle": {
+                  "value": "breasts"
+                }
+              }
+            },
+            "weight": 12.0
+          },
+          {
+            "filter": {
+              "term": {
+                "aisle": {
+                  "value": "chickens"
                 }
               }
             },
@@ -592,7 +981,7 @@
             "filter": {
               "term": {
                 "shelf": {
-                  "value": "banana"
+                  "value": "breast"
                 }
               }
             },
@@ -602,7 +991,27 @@
             "filter": {
               "term": {
                 "shelf": {
-                  "value": "bananas"
+                  "value": "chicken"
+                }
+              }
+            },
+            "weight": 22.0
+          },
+          {
+            "filter": {
+              "term": {
+                "shelf": {
+                  "value": "breasts"
+                }
+              }
+            },
+            "weight": 11.0
+          },
+          {
+            "filter": {
+              "term": {
+                "shelf": {
+                  "value": "chickens"
                 }
               }
             },
@@ -612,7 +1021,7 @@
             "filter": {
               "term": {
                 "brand": {
-                  "value": "banana"
+                  "value": "breast"
                 }
               }
             },
@@ -622,7 +1031,27 @@
             "filter": {
               "term": {
                 "brand": {
-                  "value": "bananas"
+                  "value": "chicken"
+                }
+              }
+            },
+            "weight": 20.0
+          },
+          {
+            "filter": {
+              "term": {
+                "brand": {
+                  "value": "breasts"
+                }
+              }
+            },
+            "weight": 10.0
+          },
+          {
+            "filter": {
+              "term": {
+                "brand": {
+                  "value": "chickens"
                 }
               }
             },
@@ -632,7 +1061,7 @@
             "filter": {
               "term": {
                 "genericproductname": {
-                  "value": "banana"
+                  "value": "breast"
                 }
               }
             },
@@ -642,7 +1071,27 @@
             "filter": {
               "term": {
                 "genericproductname": {
-                  "value": "bananas"
+                  "value": "chicken"
+                }
+              }
+            },
+            "weight": 20.0
+          },
+          {
+            "filter": {
+              "term": {
+                "genericproductname": {
+                  "value": "breasts"
+                }
+              }
+            },
+            "weight": 10.0
+          },
+          {
+            "filter": {
+              "term": {
+                "genericproductname": {
+                  "value": "chickens"
                 }
               }
             },
@@ -652,7 +1101,7 @@
             "filter": {
               "term": {
                 "variety": {
-                  "value": "banana"
+                  "value": "breast"
                 }
               }
             },
@@ -662,7 +1111,27 @@
             "filter": {
               "term": {
                 "variety": {
-                  "value": "bananas"
+                  "value": "chicken"
+                }
+              }
+            },
+            "weight": 20.0
+          },
+          {
+            "filter": {
+              "term": {
+                "variety": {
+                  "value": "breasts"
+                }
+              }
+            },
+            "weight": 10.0
+          },
+          {
+            "filter": {
+              "term": {
+                "variety": {
+                  "value": "chickens"
                 }
               }
             },

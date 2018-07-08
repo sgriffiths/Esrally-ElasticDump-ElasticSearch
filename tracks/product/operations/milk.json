@@ -1,734 +1,675 @@
 {
-      "name": "product_search_milk",
-      "operation-type": "search",
-      "body": {
-  "query": {
-    "function_score": {
-      "query": {
-        "bool": {
-          "must": [
-            {
-              "bool": {
-                "should": [
-                  {
-                    "bool": {
-                      "boost": 1.0,
-                      "must": [
-                        {
-                          "multi_match": {
-                            "boost": 1.0,
-                            "type": "cross_fields",
-                            "query": "milk",
-                            "operator": "and",
-                            "fields": [
-                              "barcode^1",
-                              "searchtags^1",
-                              "agerestricted^1",
-                              "brand^1",
-                              "volumesize^3",
-                              "sapdepartmentno^1",
-                              "sapsegmentname^4",
-                              "sapsegmentno^1",
-                              "sapsubcategoryno^1",
-                              "aisleid^1",
-                              "deptid^1",
-                              "shelfid^1",
-                              "sapcategoryname^1",
-                              "sapsubcategoryname^1",
-                              "shelf^1",
-                              "dept^1",
-                              "shelfgroupid^1",
-                              "aisledisplayorder_beta^1",
-                              "categorydisplayorder_beta^1",
-                              "stockcode^1",
-                              "lifestyle_claim^1",
-                              "wool_dietaryclaim^1",
-                              "pies_brand^1"
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "bool": {
-                      "boost": 1.0,
-                      "must": [
-                        {
-                          "bool": {
-                            "should": [
-                              {
-                                "wildcard": {
-                                  "numberoftimespurchased": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "agerestricted": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "aisle": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapcategoryname": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsubcategoryname": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "dept": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "deptid": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "shelfid": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsegmentname": {
-                                    "boost": 4.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapdepartmentno": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsegmentno": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsubcategoryno": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "lifestyle_claim": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "wool_dietaryclaim": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "pies_brand": {
-                                    "boost": 1.0,
-                                    "value": "milk*"
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "bool": {
-                      "boost": 1.0,
-                      "must": [
-                        {
-                          "multi_match": {
-                            "boost": 1.0,
-                            "type": "cross_fields",
-                            "query": "milk",
-                            "analyzer": "standard_autocorrect",
-                            "operator": "and",
-                            "fields": [
-                              "barcode^1",
-                              "agerestricted^1",
-                              "perishablecode^1",
-                              "volumesize^1",
-                              "sapdepartmentno^1",
-                              "sapsegmentname^1",
-                              "sapsegmentno^1",
-                              "sapsubcategoryno^1",
-                              "aisleid^1",
-                              "deptid^1",
-                              "shelfid^1",
-                              "sapcategoryname^1",
-                              "sapsubcategoryname^1",
-                              "shelf^1",
-                              "dept^1",
-                              "shelfgroupid^1",
-                              "lifestyle_claim^1"
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "bool": {
-                      "boost": 1.0,
-                      "must": [
-                        {
-                          "bool": {
-                            "should": [
-                              {
-                                "wildcard": {
-                                  "barcode": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "numberoftimespurchased": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "aisle": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapdepartmentno": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsubcategoryno": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "dept": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "deptid": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "shelf": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "perishablecode": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "boxed_contents": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "volumesize": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsegmentname": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsegmentno": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "sapsegmentno": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "aisleid": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "shelfid": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "shelfgroupid": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "lifestyle_claim": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              },
-                              {
-                                "wildcard": {
-                                  "wool_dietaryclaim": {
-                                    "boost": 1.0,
-                                    "value": "*milk"
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "multi_match": {
-                      "boost": 1.0,
-                      "type": "phrase",
-                      "query": "milk",
-                      "operator": "or",
-                      "fields": [
-                        "shelf^1",
-                        "aisle^1",
-                        "barcode^1",
-                        "stockcode^1",
-                        "sapcategoryname^1",
-                        "sapdepartmentname^1",
-                        "sapsegmentname^1",
-                        "sapsubcategoryname^1",
-                        "dept^1",
-                        "aisleid^1",
-                        "brand^1",
-                        "deptid^1",
-                        "healthstarrating^1",
-                        "lifestyle_claim^1",
-                        "perishablecode^1",
-                        "sapcategoryno^1",
-                        "sapdepartmentno^1",
-                        "sapsegmentno^1",
-                        "sapsubcategoryno^1",
-                        "searchtags^1",
-                        "shelfid^1",
-                        "wool_dietaryclaim^1",
-                        "volumesize^1",
-                        "basedescription^1",
-                        "displayname^1"
-                      ]
-                    }
-                  }
-                ]
-              }
-            }
-          ],
-          "filter": [
-            {
-              "exists": {
-                "field": "stockcode"
-              }
-            },
-            {
-              "bool": {
-                "must": [
-                  {
-                    "bool": {
-                      "should": [
-                        {
-                          "term": {
-                            "isbundle": {
-                              "value": 0
-                            }
-                          }
-                        },
-                        {
-                          "bool": {
-                            "must_not": [
-                              {
-                                "exists": {
-                                  "field": "isbundle"
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "term": {
-                            "webenable": {
-                              "value": "true"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "nested": {
-                      "query": {
-                        "bool": {
-                          "must": [
-                            {
-                              "term": {
-                                "price.fulfilmentstoreid": {
-                                  "value": "1649"
-                                }
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      "path": "price"
-                    }
-                  }
-                ],
-                "must_not": [
-                  {
-                    "range": {
-                      "agerestricted.raw": {
-                        "gt": 2147483647.0,
-                        "lt": 2147483647.0
-                      }
-                    }
-                  },
-                  {
-                    "nested": {
-                      "query": {
-                        "bool": {
-                          "must": [
-                            {
-                              "terms": {
-                                "productgroupdisplayorder.productgroupid": []
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      "path": "productgroupdisplayorder"
-                    }
-                  },
-                  {
-                    "exists": {
-                      "field": "shelfgroupid"
-                    }
-                  },
-                  {
-                    "nested": {
-                      "query": {
-                        "bool": {
-                          "must": [
-                            {
-                              "terms": {
-                                "categories.nodeid.raw": [
-                                  "1_5D1DC54",
-                                  "1_5F7F818",
-                                  "1_6041D22",
-                                  "1_642B716",
-                                  "1_86F606C",
-                                  "1_B63CF9E"
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      "path": "categories"
-                    }
-                  },
-                  {
-                    "terms": {
-                      "deptid": []
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      "functions": [
-        {
-          "filter": {
-            "term": {
-              "dept": {
-                "value": "milk"
-              }
-            }
-          },
-          "weight": 26.0
-        },
-        {
-          "filter": {
-            "term": {
-              "dept": {
-                "value": "milks"
-              }
-            }
-          },
-          "weight": 13.0
-        },
-        {
-          "filter": {
-            "term": {
-              "aisle": {
-                "value": "milk"
-              }
-            }
-          },
-          "weight": 24.0
-        },
-        {
-          "filter": {
-            "term": {
-              "aisle": {
-                "value": "milks"
-              }
-            }
-          },
-          "weight": 12.0
-        },
-        {
-          "filter": {
-            "term": {
-              "shelf": {
-                "value": "milk"
-              }
-            }
-          },
-          "weight": 22.0
-        },
-        {
-          "filter": {
-            "term": {
-              "shelf": {
-                "value": "milks"
-              }
-            }
-          },
-          "weight": 11.0
-        },
-        {
-          "filter": {
-            "term": {
-              "brand": {
-                "value": "milk"
-              }
-            }
-          },
-          "weight": 20.0
-        },
-        {
-          "filter": {
-            "term": {
-              "brand": {
-                "value": "milks"
-              }
-            }
-          },
-          "weight": 10.0
-        },
-        {
-          "filter": {
-            "term": {
-              "genericproductname": {
-                "value": "milk"
-              }
-            }
-          },
-          "weight": 20.0
-        },
-        {
-          "filter": {
-            "term": {
-              "genericproductname": {
-                "value": "milks"
-              }
-            }
-          },
-          "weight": 10.0
-        },
-        {
-          "filter": {
-            "term": {
-              "variety": {
-                "value": "milk"
-              }
-            }
-          },
-          "weight": 20.0
-        },
-        {
-          "filter": {
-            "term": {
-              "variety": {
-                "value": "milks"
-              }
-            }
-          },
-          "weight": 10.0
-        }
-      ],
-      "score_mode": "sum",
-      "boost_mode": "replace"
-    }
-  }
-      }
-    },
-    {
-      "name": "product_search_milk_family",
-      "operation-type": "search",
-      "body": {
-  "query": {
-    "bool": {
-      "filter": [
-        {
-          "exists": {
-            "field": "stockcode"
-          }
-        },
-        {
+  "name": "product_search_milk",
+  "operation-type": "search",
+  "body": {
+    "query": {
+      "function_score": {
+        "query": {
           "bool": {
             "must": [
               {
-                "nested": {
-                  "query": {
-                    "bool": {
-                      "must": [
-                        {
-                          "term": {
-                            "price.fulfilmentstoreid": {
-                              "value": "1649"
+                "bool": {
+                  "should": [
+                    {
+                      "bool": {
+                        "boost": 1.0,
+                        "must": [
+                          {
+                            "multi_match": {
+                              "boost": 1.0,
+                              "type": "cross_fields",
+                              "query": "milk",
+                              "operator": "and",
+                              "fields": [
+                                "barcode^1",
+                                "searchtags^1",
+                                "agerestricted^1",
+                                "brand^1",
+                                "volumesize^3",
+                                "sapdepartmentno^1",
+                                "sapsegmentname^4",
+                                "sapsegmentno^1",
+                                "sapsubcategoryno^1",
+                                "aisleid^1",
+                                "deptid^1",
+                                "shelfid^1",
+                                "sapcategoryname^1",
+                                "sapsubcategoryname^1",
+                                "shelf^1",
+                                "dept^1",
+                                "shelfgroupid^1",
+                                "aisledisplayorder_beta^1",
+                                "categorydisplayorder_beta^1",
+                                "stockcode^1",
+                                "lifestyle_claim^1",
+                                "wool_dietaryclaim^1",
+                                "pies_brand^1"
+                              ]
                             }
                           }
-                        }
-                      ]
+                        ]
+                      }
+                    },
+                    {
+                      "bool": {
+                        "boost": 1.0,
+                        "must": [
+                          {
+                            "bool": {
+                              "should": [
+                                {
+                                  "wildcard": {
+                                    "numberoftimespurchased": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "agerestricted": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "aisle": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapcategoryname": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsubcategoryname": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "dept": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "deptid": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelfid": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentname": {
+                                      "boost": 4.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapdepartmentno": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentno": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsubcategoryno": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "lifestyle_claim": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "wool_dietaryclaim": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "pies_brand": {
+                                      "boost": 1.0,
+                                      "value": "milk*"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "bool": {
+                        "boost": 1.0,
+                        "must": [
+                          {
+                            "multi_match": {
+                              "boost": 1.0,
+                              "type": "cross_fields",
+                              "query": "milk",
+                              "analyzer": "standard_autocorrect",
+                              "operator": "and",
+                              "fields": [
+                                "barcode^1",
+                                "agerestricted^1",
+                                "perishablecode^1",
+                                "volumesize^1",
+                                "sapdepartmentno^1",
+                                "sapsegmentname^1",
+                                "sapsegmentno^1",
+                                "sapsubcategoryno^1",
+                                "aisleid^1",
+                                "deptid^1",
+                                "shelfid^1",
+                                "sapcategoryname^1",
+                                "sapsubcategoryname^1",
+                                "shelf^1",
+                                "dept^1",
+                                "shelfgroupid^1",
+                                "lifestyle_claim^1"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "bool": {
+                        "boost": 1.0,
+                        "must": [
+                          {
+                            "bool": {
+                              "should": [
+                                {
+                                  "wildcard": {
+                                    "barcode": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "numberoftimespurchased": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "aisle": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapdepartmentno": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsubcategoryno": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "dept": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "deptid": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelf": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "perishablecode": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "boxed_contents": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "volumesize": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentname": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentno": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "sapsegmentno": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "aisleid": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelfid": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "shelfgroupid": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "lifestyle_claim": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                },
+                                {
+                                  "wildcard": {
+                                    "wool_dietaryclaim": {
+                                      "boost": 1.0,
+                                      "value": "*milk"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "multi_match": {
+                        "boost": 1.0,
+                        "type": "phrase",
+                        "query": "milk",
+                        "operator": "or",
+                        "fields": [
+                          "shelf^1",
+                          "aisle^1",
+                          "barcode^1",
+                          "stockcode^1",
+                          "sapcategoryname^1",
+                          "sapdepartmentname^1",
+                          "sapsegmentname^1",
+                          "sapsubcategoryname^1",
+                          "dept^1",
+                          "aisleid^1",
+                          "brand^1",
+                          "deptid^1",
+                          "healthstarrating^1",
+                          "lifestyle_claim^1",
+                          "perishablecode^1",
+                          "sapcategoryno^1",
+                          "sapdepartmentno^1",
+                          "sapsegmentno^1",
+                          "sapsubcategoryno^1",
+                          "searchtags^1",
+                          "shelfid^1",
+                          "wool_dietaryclaim^1",
+                          "volumesize^1",
+                          "basedescription^1",
+                          "displayname^1"
+                        ]
+                      }
                     }
-                  },
-                  "path": "price"
-                }
-              },
-              {
-                "terms": {
-                  "shelfgroupid": [
-                    "3071",
-                    "3070"
                   ]
                 }
               }
             ],
-            "must_not": [
+            "filter": [
               {
-                "range": {
-                  "agerestricted.raw": {
-                    "gt": 2147483647.0,
-                    "lt": 2147483647.0
-                  }
+                "exists": {
+                  "field": "stockcode"
+                }
+              },
+              {
+                "bool": {
+                  "must": [
+                    {
+                      "bool": {
+                        "should": [
+                          {
+                            "term": {
+                              "isbundle": {
+                                "value": 0
+                              }
+                            }
+                          },
+                          {
+                            "bool": {
+                              "must_not": [
+                                {
+                                  "exists": {
+                                    "field": "isbundle"
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "term": {
+                              "webenable": {
+                                "value": "true"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "nested": {
+                        "query": {
+                          "bool": {
+                            "must": [
+                              {
+                                "term": {
+                                  "price.fulfilmentstoreid": {
+                                    "value": "1649"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "path": "price"
+                      }
+                    }
+                  ],
+                  "must_not": [
+                    {
+                      "range": {
+                        "agerestricted.raw": {
+                          "gt": 2147483647.0,
+                          "lt": 2147483647.0
+                        }
+                      }
+                    },
+                    {
+                      "nested": {
+                        "query": {
+                          "bool": {
+                            "must": [
+                              {
+                                "terms": {
+                                  "productgroupdisplayorder.productgroupid": []
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "path": "productgroupdisplayorder"
+                      }
+                    },
+                    {
+                      "exists": {
+                        "field": "shelfgroupid"
+                      }
+                    },
+                    {
+                      "nested": {
+                        "query": {
+                          "bool": {
+                            "must": [
+                              {
+                                "terms": {
+                                  "categories.nodeid.raw": [
+                                    "1_5D1DC54",
+                                    "1_5F7F818",
+                                    "1_6041D22",
+                                    "1_642B716",
+                                    "1_86F606C",
+                                    "1_B63CF9E"
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "path": "categories"
+                      }
+                    },
+                    {
+                      "terms": {
+                        "deptid": []
+                      }
+                    }
+                  ]
                 }
               }
             ]
           }
-        }
-      ]
-    }
-  }
+        },
+        "functions": [
+          {
+            "filter": {
+              "term": {
+                "dept": {
+                  "value": "milk"
+                }
+              }
+            },
+            "weight": 26.0
+          },
+          {
+            "filter": {
+              "term": {
+                "dept": {
+                  "value": "milks"
+                }
+              }
+            },
+            "weight": 13.0
+          },
+          {
+            "filter": {
+              "term": {
+                "aisle": {
+                  "value": "milk"
+                }
+              }
+            },
+            "weight": 24.0
+          },
+          {
+            "filter": {
+              "term": {
+                "aisle": {
+                  "value": "milks"
+                }
+              }
+            },
+            "weight": 12.0
+          },
+          {
+            "filter": {
+              "term": {
+                "shelf": {
+                  "value": "milk"
+                }
+              }
+            },
+            "weight": 22.0
+          },
+          {
+            "filter": {
+              "term": {
+                "shelf": {
+                  "value": "milks"
+                }
+              }
+            },
+            "weight": 11.0
+          },
+          {
+            "filter": {
+              "term": {
+                "brand": {
+                  "value": "milk"
+                }
+              }
+            },
+            "weight": 20.0
+          },
+          {
+            "filter": {
+              "term": {
+                "brand": {
+                  "value": "milks"
+                }
+              }
+            },
+            "weight": 10.0
+          },
+          {
+            "filter": {
+              "term": {
+                "genericproductname": {
+                  "value": "milk"
+                }
+              }
+            },
+            "weight": 20.0
+          },
+          {
+            "filter": {
+              "term": {
+                "genericproductname": {
+                  "value": "milks"
+                }
+              }
+            },
+            "weight": 10.0
+          },
+          {
+            "filter": {
+              "term": {
+                "variety": {
+                  "value": "milk"
+                }
+              }
+            },
+            "weight": 20.0
+          },
+          {
+            "filter": {
+              "term": {
+                "variety": {
+                  "value": "milks"
+                }
+              }
+            },
+            "weight": 10.0
+          }
+        ],
+        "score_mode": "sum",
+        "boost_mode": "replace"
       }
     }
+  }
+}
