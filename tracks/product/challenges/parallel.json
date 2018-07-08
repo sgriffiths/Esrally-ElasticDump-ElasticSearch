@@ -59,7 +59,7 @@
             "warmup-time-period": 60,
             "time-period": 300,
             "target-throughput": 100
-          },          
+          },
           {
             "operation": "product_search_banana",
             "clients": 5,
@@ -69,6 +69,13 @@
           },
           {
             "operation": "product_search_banana_family",
+            "clients": 5,
+            "warmup-time-period": 60,
+            "time-period": 300,
+            "target-throughput": 100
+          },
+          {
+            "operation": "product_search_chicken",
             "clients": 5,
             "warmup-time-period": 60,
             "time-period": 300,

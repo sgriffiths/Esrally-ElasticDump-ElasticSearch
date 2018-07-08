@@ -51,7 +51,7 @@
             "bulk-size": 1000
           },
           "warmup-time-period": 60,
-          "clients": 16
+          "clients": 1
         },
         {
           "operation": {
