@@ -1,0 +1,59 @@
+{
+  "name": "product_search_milk_family",
+  "operation-type": "search",
+  "body": {
+    "query": {
+      "bool": {
+        "filter": [
+          {
+            "exists": {
+              "field": "stockcode"
+            }
+          },
+          {
+            "bool": {
+              "must": [
+                {
+                  "nested": {
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "term": {
+                              "price.fulfilmentstoreid": {
+                                "value": "1649"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "path": "price"
+                  }
+                },
+                {
+                  "terms": {
+                    "shelfgroupid": [
+                      "3071",
+                      "3070"
+                    ]
+                  }
+                }
+              ],
+              "must_not": [
+                {
+                  "range": {
+                    "agerestricted.raw": {
+                      "gt": 2147483647.0,
+                      "lt": 2147483647.0
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
