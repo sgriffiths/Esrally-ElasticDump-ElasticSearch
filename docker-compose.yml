@@ -10,7 +10,7 @@ services:
     volumes:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
-      - ./results:/usr/results
+      - ./results:/usr/rally/results
 
   review:
     image: ducas/elastic-rally:0.11.0
@@ -21,7 +21,7 @@ services:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
       - ./data:/usr/rally/data
-      - ./results:/usr/results
+      - ./results:/usr/rally/results
 
   # suggestion:
   #   image: ducas/elastic-rally:0.11.0
@@ -41,7 +41,7 @@ services:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
       - ./data:/usr/rally/data
-      - ./results:/usr/results
+      - ./results:/usr/rally/results
 
   category:
     image: ducas/elastic-rally:0.11.0
@@ -52,4 +52,4 @@ services:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
       - ./data:/usr/rally/data
-      - ./results:/usr/results
+      - ./results:/usr/rally/results

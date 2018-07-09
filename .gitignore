@@ -1,0 +1,5 @@
+#ignore results folder
+tracks/results/
+results/
+#Ignore the rally.ini file
+*.ini
