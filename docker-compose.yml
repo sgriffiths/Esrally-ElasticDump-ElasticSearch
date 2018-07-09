@@ -16,7 +16,7 @@ services:
     image: ducas/elastic-rally:0.11.0
     environment:
       USER_TAG: loadtest:current ES Dev version 5.6.8 ProductReviewTrack
-    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/review --report-format=csv --report-file=/usr/rally/results/review_result.csv
+    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/review --track-params duration:${ES_DURATION},clients:${ES_CLIENTS},throughput:${ES_THROUGHPUT} --report-format=csv --report-file=/usr/rally/results/review_result.csv
     volumes:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
@@ -27,16 +27,18 @@ services:
   #   image: ducas/elastic-rally:0.11.0
   #   environment:
   #     USER_TAG: loadtest:current ES Dev version 5.6.8 SuggestionTrack
-  #   command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/suggestion --user-tag loadtest:current_SuggestionTrack
+  #   command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/suggestion --track-params duration:${ES_DURATION},clients:${ES_CLIENTS},throughput:${ES_THROUGHPUT} --user-tag loadtest:current_SuggestionTrack
   #   volumes:
-  #     - ./rally.ini:/root/.rally/rally.ini
-  #     - ./tracks:/usr/rally
+      #  - ./rally.ini:/root/.rally/rally.ini
+      # - ./tracks:/usr/rally
+      # - ./data:/usr/rally/data
+      # - ./results:/usr/rally/results
 
   aggregate:
     image: ducas/elastic-rally:0.11.0
     environment:
       USER_TAG: loadtest:current ES Dev version 5.6.8 AggregateTrack
-    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/aggregate --report-format=csv --report-file=/usr/rally/results/aggregate_result.csv
+    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/aggregate --track-params duration:${ES_DURATION},clients:${ES_CLIENTS},throughput:${ES_THROUGHPUT} --report-format=csv --report-file=/usr/rally/results/aggregate_result.csv
     volumes:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
@@ -47,7 +49,7 @@ services:
     image: ducas/elastic-rally:0.11.0
     environment:
       USER_TAG: loadtest:current ES Dev version 5.6.8 CategoryTrack
-    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/category --report-format=csv --report-file=/usr/rally/results/category_result.csv
+    command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --track-path /usr/rally/category --track-params duration:${ES_DURATION},clients:${ES_CLIENTS},throughput:${ES_THROUGHPUT} --report-format=csv --report-file=/usr/rally/results/category_result.csv
     volumes:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
