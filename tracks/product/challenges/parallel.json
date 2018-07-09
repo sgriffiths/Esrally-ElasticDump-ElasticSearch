@@ -22,63 +22,63 @@
             "operation": "product_search_milk",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_milk_family",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_coke",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_coke_family",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_chee*_partial",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_chee*_family_partial",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_banana",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_banana_family",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           },
           {
             "operation": "product_search_chicken",
             "clients": 5,
             "warmup-time-period": 60,
-            "time-period": 60,
+            "time-period": 300,
             "target-throughput": 100
           }
         ]
