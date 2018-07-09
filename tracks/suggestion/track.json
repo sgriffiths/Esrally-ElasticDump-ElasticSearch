@@ -23,7 +23,7 @@
   ],
   "challenges": [
     {
-      "name": "index-and-query",
+      "name": "index-and-query-suggestion",
       "default": true,
       "schedule": [
         {

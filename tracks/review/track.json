@@ -24,7 +24,7 @@
   ],
   "challenges": [
     {
-      "name": "index-and-search-ProductReview",
+      "name": "index-and-query-review",
       "default": true,
       "schedule": [
         {

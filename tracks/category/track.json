@@ -24,7 +24,7 @@
   ],
   "challenges": [
     {
-      "name": "index-and-query",
+      "name": "index-and-query-category",
       "default": true,
       "schedule": [
         {

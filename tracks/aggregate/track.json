@@ -24,7 +24,7 @@
   ],
   "challenges": [
     {
-      "name": "index-and-query",
+      "name": "index-and-query-aggregate",
       "default": true,
       "schedule": [
         {
