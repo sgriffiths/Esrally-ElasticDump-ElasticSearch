@@ -10,8 +10,7 @@
         "index": "product_b",
         "request-params": {
           "wait_for_status": "green",
-          "wait_for_no_relocating_shards": "true",
-          "clients": 1
+          "wait_for_no_relocating_shards": "true"
         }
       }
     },
