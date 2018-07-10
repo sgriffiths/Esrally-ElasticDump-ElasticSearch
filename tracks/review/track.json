@@ -60,7 +60,7 @@
         },
         {
           "operation": {
-            "name": "query-search-product_review",
+            "name": "query-review-product",
             "operation-type": "search",
             "body": {
               "query": {
@@ -85,9 +85,9 @@
               "size": 50
             }
           },
-          "clients": 5,
-          "time-period": 300,
-          "target-throughput": 100
+          "clients": {{ clients|default(5) }},
+          "time-period": {{ duration|default(300) }},
+          "target-throughput": {{ throughput|default(300) }}
         }
       ]
     }

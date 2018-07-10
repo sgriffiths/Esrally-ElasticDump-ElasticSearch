@@ -2,4 +2,4 @@
 tracks/results/
 results/
 #Ignore the rally.ini file
-*.ini
+rally.ini

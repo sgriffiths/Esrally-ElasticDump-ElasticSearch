@@ -49,9 +49,7 @@
           "operation": {
             "operation-type": "bulk",
             "bulk-size": 1000
-          },
-          "warmup-time-period": 60,
-          "clients": 1
+          }
         },
         {
           "operation": {
@@ -60,7 +58,7 @@
         },
         {
           "operation": {
-            "name": "query-search-sale-price-range",
+            "name": "query-aggregate-sale-price-range",
             "operation-type": "search",
             "body": {
               "query": {
@@ -83,9 +81,9 @@
               "size": 25
             }
           },
-          "clients": 5,
-          "time-period": 300,
-          "target-throughput": 100
+          "clients": {{ clients|default(5) }},
+          "time-period": {{ duration|default(300) }},
+          "target-throughput": {{ throughput|default(300) }}
         }
       ]
     }

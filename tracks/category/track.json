@@ -60,7 +60,7 @@
         },
         {
           "operation": {
-            "name": "query-search-all_milk-categories",
+            "name": "query-category-all_milk",
             "operation-type": "search",
             "body": {
               "query": {
@@ -89,9 +89,9 @@
               "aggs": {}
             }
           },
-          "clients": 5,
-          "time-period": 300,
-          "target-throughput": 100
+          "clients": {{ clients|default(5) }},
+          "time-period": {{ duration|default(300) }},
+          "target-throughput": {{ throughput|default(300) }}
         }
       ]
     }
