@@ -90,7 +90,7 @@
             }
           },
           "clients": {{ clients|default(5) }},
-          "time-period": {{ duration|default(300) }},
+          "time-period": {{ duration|default(60) }},
           "target-throughput": {{ throughput|default(300) }}
         }
       ]
