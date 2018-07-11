@@ -60,7 +60,7 @@
         },
         {
           "operation": {
-            "name": "query-review-product",
+            "name": "review-search-product",
             "operation-type": "search",
             "body": {
               "query": {

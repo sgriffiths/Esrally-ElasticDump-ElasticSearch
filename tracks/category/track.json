@@ -60,7 +60,7 @@
         },
         {
           "operation": {
-            "name": "query-category-all_milk",
+            "name": "category-search-all_milk",
             "operation-type": "search",
             "body": {
               "query": {

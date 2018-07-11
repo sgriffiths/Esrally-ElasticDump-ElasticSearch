@@ -58,7 +58,7 @@
         },
         {
           "operation": {
-            "name": "query-aggregate-sale-price-range",
+            "name": "aggregate-search-sale-price-range",
             "operation-type": "search",
             "body": {
               "query": {
