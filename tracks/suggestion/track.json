@@ -2,7 +2,7 @@
   "description": "Rally suggestion_a performance test",
   "indices": [
     {
-      "name": "suggestion_b",
+      "name": "suggestion_a",
       "body": "index.json",
       "types": [
         "docs"
@@ -14,9 +14,9 @@
       "name": "suggestion-test-track",
       "documents": [
         {
-          "source-file": "../data/suggestion_b.data.json",
-          "document-count": 19,
-          "uncompressed-bytes": 2023
+          "source-file": "../data/suggestion_a.data.json",
+          "document-count": 49210,
+          "uncompressed-bytes": 4600199
         }
       ]
     }
@@ -86,7 +86,8 @@
                 },
           "clients": {{ clients|default(5) }},
           "time-period": {{ duration|default(300) }},
-          "target-throughput": {{ throughput|default(300) }}
+          "target-throughput": {{ throughput|default(300) }},
+          "warmup-time-period": 60
               },
               {
                 "operation": {
@@ -114,7 +115,8 @@
                 },
           "clients": {{ clients|default(5) }},
           "time-period": {{ duration|default(300) }},
-          "target-throughput": {{ throughput|default(300) }}
+          "target-throughput": {{ throughput|default(300) }},
+          "warmup-time-period": 60
               }
             ]
           }

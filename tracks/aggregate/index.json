@@ -1,5 +1,5 @@
 {
-  "productaggregate_b": {
+  "productaggregate_*": {
     "mappings": {
       "doc": {
         "properties": {

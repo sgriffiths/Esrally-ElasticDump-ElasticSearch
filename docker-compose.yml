@@ -27,7 +27,7 @@ services:
   #   image: ducas/elastic-rally:0.11.0
   #   environment:
   #     USER_TAG: loadtest:current ES Dev version 5.6.8 SuggestionTrack
-  #   command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --user-tag $USER_TAG_SUGGESTION:" clients=${ES_CLIENTS} duration=${ES_DURATION} throughput(TPS per client)=${ES_THROUGHPUT}" --track-path /usr/rally/suggestion --track-params duration:${ES_DURATION},clients:${ES_CLIENTS},throughput:${ES_THROUGHPUT} --user-tag loadtest:current_SuggestionTrack
+  #   command: esrally --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --user-tag $USER_TAG_SUGGESTION:" clients=${ES_CLIENTS} duration=${ES_DURATION} throughput(TPS per client)=${ES_THROUGHPUT}" --track-path /usr/rally/suggestion --track-params duration:${ES_DURATION},clients:${ES_CLIENTS},throughput:${ES_THROUGHPUT} --report-format=csv --report-file=/usr/rally/results/suggestion_result.csv
   #   volumes:
   #     - ./rally.ini:/root/.rally/rally.ini
   #     - ./tracks:/usr/rally

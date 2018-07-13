@@ -60,7 +60,7 @@
         },
         {
           "operation": {
-            "name": "category-search-all_milk",
+            "name": "category-search-all_milk_and_coffee",
             "operation-type": "search",
             "body": {
               "query": {
@@ -91,7 +91,8 @@
           },
           "clients": {{ clients|default(5) }},
           "time-period": {{ duration|default(60) }},
-          "target-throughput": {{ throughput|default(300) }}
+          "target-throughput": {{ throughput|default(300) }},
+          "warmup-time-period": 60
         }
       ]
     }

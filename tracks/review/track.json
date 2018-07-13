@@ -87,7 +87,8 @@
           },
           "clients": {{ clients|default(5) }},
           "time-period": {{ duration|default(300) }},
-          "target-throughput": {{ throughput|default(300) }}
+          "target-throughput": {{ throughput|default(300) }},
+          "warmup-time-period": 60
         }
       ]
     }

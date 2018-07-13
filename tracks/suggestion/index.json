@@ -1,5 +1,5 @@
 {
-  "suggestion_b": {
+  "suggestion_a": {
     "mappings": {
       "doc": {
         "properties": {
@@ -8,15 +8,6 @@
             "fields": {
               "raw": {
                 "type": "keyword"
-              }
-            },
-            "analyzer": "default_suggestion"
-          },
-          "term2": {
-            "type": "text",
-            "fields": {
-              "raw": {
-                "type": "long"
               }
             },
             "analyzer": "default_suggestion"
