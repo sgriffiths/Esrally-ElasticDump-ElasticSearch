@@ -11,7 +11,7 @@ cd ../
 rm data/*.*
 cd data/
 
-#Iterate through each of the indexes and save to a file
+#Iterate through each of the indexes and save to a file - sourceonly removes the metadata (index info etc)
 for INDEX in $indices
 do
   elasticdump --limit=1000 --input=${INPUT}/$INDEX --output=$INDEX".data.json" --type=data --sourceOnly

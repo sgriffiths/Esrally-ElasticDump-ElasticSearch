@@ -49,7 +49,9 @@
           "operation": {
             "operation-type": "bulk",
             "bulk-size": 1000
-          }
+          },
+          "warmup-time-period": 60,
+          "clients": 1
         },
         {
           "operation": {
@@ -83,7 +85,8 @@
           },
           "clients": {{ clients|default(5) }},
           "time-period": {{ duration|default(300) }},
-          "target-throughput": {{ throughput|default(300) }}
+          "target-throughput": {{ throughput|default(300) }},
+          "warmup-time-period": 60
         }
       ]
     }

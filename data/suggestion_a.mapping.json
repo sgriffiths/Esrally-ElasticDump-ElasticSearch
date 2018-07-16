@@ -1,0 +1,1 @@
+{"suggestion_a":{"mappings":{"doc":{"properties":{"term":{"type":"text","fields":{"raw":{"type":"keyword"}},"analyzer":"default_suggestion"},"weight":{"type":"text","fields":{"raw":{"type":"double"}},"analyzer":"default_en"}}}}}}
