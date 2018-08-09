@@ -1,11 +1,16 @@
 # Introduction 
 
-This project uses elasticrally to run load tests against ElasticSearch:
+This project uses elasticrally to run load tests against ElasticSearch. 
+This just uses json queries and does not include the 
 
-https://github.com/elastic/rally
+# To Run:
+terminal session:
+1. git clone https://github.com/sgriffiths/Esrally-ElasticDump-ElasticSearch.git && cd Esrally-ElasticDump-ElasticSearch
+2. Update the 'rally.ini' datastore details
+3. docker-compose run product
 
 1 tracks are available:
-* product
+"product"
 
 # Getting Started
 
