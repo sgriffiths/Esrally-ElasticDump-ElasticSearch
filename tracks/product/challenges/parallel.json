@@ -19,63 +19,7 @@
       "parallel": {
         "tasks": [
           {
-            "operation": "product_search_milk",
-            "clients": {{ clients|default(5) }},
-            "warmup-time-period":90,
-            "time-period": {{ duration|default(300) }},
-            "target-throughput": {{ throughput|default(50) }}
-          },
-          {
-            "operation": "product_search_milk_family",
-            "clients": {{ clients|default(5)}},
-            "warmup-time-period":90,
-            "time-period": {{duration|default(300)}},
-            "target-throughput": {{ throughput|default(50)}}
-          },
-          {
-            "operation": "product_search_coke",
-            "clients": {{ clients|default(5)}},
-            "warmup-time-period":90,
-            "time-period": {{duration|default(300)}},
-            "target-throughput": {{ throughput|default(50)}}
-          },
-          {
             "operation": "product_search_coke_family",
-            "clients": {{ clients|default(5)}},
-            "warmup-time-period":90,
-            "time-period": {{duration|default(300)}},
-            "target-throughput": {{ throughput|default(50)}}
-          },
-          {
-            "operation": "product_search_chee*_partial",
-            "clients": {{ clients|default(5)}},
-            "warmup-time-period":90,
-            "time-period": {{duration|default(300)}},
-            "target-throughput": {{ throughput|default(50)}}
-          },
-          {
-            "operation": "product_search_chee*_family_partial",
-            "clients": {{ clients|default(5)}},
-            "warmup-time-period":90,
-            "time-period": {{duration|default(300)}},
-            "target-throughput": {{ throughput|default(50)}}
-          },
-          {
-            "operation": "product_search_banana",
-            "clients": {{ clients|default(5)}},
-            "warmup-time-period":90,
-            "time-period": {{duration|default(300)}},
-            "target-throughput": {{ throughput|default(50)}}
-          },
-          {
-            "operation": "product_search_banana_family",
-            "clients": {{ clients|default(5)}},
-            "warmup-time-period":90,
-            "time-period": {{duration|default(300)}},
-            "target-throughput": {{ throughput|default(50)}}
-          },
-          {
-            "operation": "product_search_chicken",
             "clients": {{ clients|default(5)}},
             "warmup-time-period":90,
             "time-period": {{duration|default(300)}},
