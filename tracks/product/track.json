@@ -3,7 +3,7 @@
   "description": "Rally product performance test",
   "indices": [
     {
-      "name": "product_b",
+      "name": "product",
       "types": [
         "docs"
       ]
