@@ -5,8 +5,8 @@ This just uses json queries and does not include the
 
 # To Run:
 terminal session:
-1. git clone https://github.com/sgriffiths/Esrally-ElasticDump-ElasticSearch.git && cd Esrally-ElasticDump-ElasticSearch
-2. Update the 'rally.ini' datastore details
+1. git clone https://github.com/sgriffiths/Esrally-ElasticSearch.git && cd Esrally-ElasticSearch
+2. Update the 'rally.ini' datastore details(localhost or remote IP addres and user/password if using xpack with basic auth)
 3. docker-compose run product
 
 1 tracks are available:
