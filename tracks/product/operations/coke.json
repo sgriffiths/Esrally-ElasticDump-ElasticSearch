@@ -1,58 +1,9 @@
 {
-  "name": "product_search",
-  "operation-type": "search",
-  "body": {
-    "query": {
-      "bool": {
-        "filter": [
-          {
-            "exists": {
-              "field": "stockcode"
-            }
-          },
-          {
-            "bool": {
-              "must": [
-                {
-                  "nested": {
-                    "query": {
-                      "bool": {
-                        "must": [
-                          {
-                            "term": {
-                              "price.fulfilmentstoreid": {
-                                "value": "1649"
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "path": "price"
-                  }
-                },
-                {
-                  "term": {
-                    "shelfgroupid": {
-                      "value": "19"
-                    }
-                  }
-                }
-              ],
-              "must_not": [
-                {
-                  "range": {
-                    "agerestricted.raw": {
-                      "gt": 2147483647.0,
-                      "lt": 2147483647.0
-                    }
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    }
-  }
+	"name": "product_search",
+	"operation-type": "search",
+	"body": {
+		"query": {
+			"match_all": {}
+		}
+	}
 }

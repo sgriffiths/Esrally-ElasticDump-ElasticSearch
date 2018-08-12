@@ -1,6 +1,6 @@
 {
-  "name": "search for terms and phrases",
-  "description": "search for multiple queries",
+  "name": "match-all search",
+  "description": "search for everything in the index",
   "default": true,
   "schedule": [
     {
