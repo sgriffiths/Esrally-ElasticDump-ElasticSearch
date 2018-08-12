@@ -1,5 +1,5 @@
 {
-  "name": "product_search_coke_family",
+  "name": "product_search",
   "operation-type": "search",
   "body": {
     "query": {

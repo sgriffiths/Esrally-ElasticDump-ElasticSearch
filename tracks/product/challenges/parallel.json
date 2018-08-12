@@ -19,7 +19,7 @@
       "parallel": {
         "tasks": [
           {
-            "operation": "product_search_coke_family",
+            "operation": "product_search",
             "clients": {{ clients|default(5)}},
             "warmup-time-period":90,
             "time-period": {{duration|default(300)}},
