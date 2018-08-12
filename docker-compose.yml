@@ -3,6 +3,9 @@ version: "2.2"
 services:
   product:
     image: ducas/elastic-rally:0.11.0
+    networks:
+      elastic-esrally-network:
+        ipv4_address: 172.18.0.6
     environment:
       USER_TAG: loadtest:current ES Dev version 5.6.8 ProductTrack
     command: esrally race --pipeline benchmark-only --target-hosts ${ES_HOSTNAME} --user-tag $USER_TAG_PRODUCT:" clients=${ES_CLIENTS} duration=${ES_DURATION} throughput(TPS per client)=${ES_THROUGHPUT}" --track-path /usr/rally/product --track-params duration:${ES_DURATION},clients:${ES_CLIENTS},throughput:${ES_THROUGHPUT} --report-file=/usr/rally/results/product_result.md
@@ -10,3 +13,6 @@ services:
       - ./rally.ini:/root/.rally/rally.ini
       - ./tracks:/usr/rally
       - ./results:/usr/rally/results
+networks:
+    elastic-esrally-network:
+       external: true
